@@ -43,7 +43,33 @@ function algo(x,y) {
       rem = x%y;
       output = "Quotient ="+ div +" Remainder ="+ rem;
       document.getElementById("print").innerHTML = output;
-  	}
+  	}else {
+  		//implement a .range from the lodash library to sort from min to max irrespective of who is num or denum.
+   	   var list = _.range(_.min(x,y), _.max(x,y)+1);
+   	   //set lowBond to index zero and uppBound to the last index, 
+   	   lowBound = 0; uppBound = (list.length)-1;
+   	   //using while to implemet binary search in the range 
+   	   	while ( (uppBound-lowBound)>1 ) {
+   		index = _.floor((uppBound+lowBound)/2);
+   		if ((list[index]*y)>x) {
+   			if (y<0) {lowBound=index}else {
+   				uppBound = index;
+   			}
+   		}else if ((list[index]*y)<x){
+   			if (y<0) {uppBound=index}else {
+   				lowBound = index;
+   			}
+   		}
+   		//set quotient to the value located in the index of the range after being multiplied by denum but > or < than x
+   		var quotient = list[lowBound];
+
+   		var rem 	 = x - (list[lowBound]*y);
+   		//set result output
+   		output = "The quotient = "+ quotient+" Remainder ="+ rem;
+   		 document.getElementById("print").innerHTML = output; 
+   	}
+}
+}
 
 </script>
 </body>
