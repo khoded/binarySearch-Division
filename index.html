@@ -28,7 +28,22 @@
 	}
 }
 
-
+function algo(x,y) {
+	//create the upperBOund and LowerBound of the of the array for the num and denom values.
+	var uppBound,lowBound, index;
+    if (y == 0){
+    	//denominator value is set to zero by user yield error
+            output = "error";
+            document.getElementById("print").innerHTML = output;
+   }else if (x <= 0 && y <= 0  || x >= 0 && y >= 0) {
+   	//create div and rem for the  quotien and remainder let allows for block scope
+      let div , rem;
+     //using _ from the lodash lib call function such as .divide, .floor
+      div = _.floor(_.divide(x,y));
+      rem = x%y;
+      output = "Quotient ="+ div +" Remainder ="+ rem;
+      document.getElementById("print").innerHTML = output;
+  	}
 
 </script>
 </body>
