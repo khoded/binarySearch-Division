@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<script src="lodash.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
 <body>
 
 <h2>JavaScript Binary Search Division</h2>
@@ -11,17 +14,22 @@
 
 
 <script>
-function myFunction() {
-  var  output, num, denum;
-   	   num    =   prompt("Enter Numerator value:", "Numerator");
-       denum  =   prompt("Enter Denumerator value:", "Denumerator");
-  if (num == null || num == "" || denum == null || denum == "") {
-    	output = "Client cancelled the prompt.";
-  }else{
-    output = "Your values are Numerator = "+num +" Denumerator = "+ denum +" ";
-  }
-  document.getElementById("print").innerHTML = output;
+	var  output, num, denom;
+	function myFunction() {
+		//create input method using prompt box
+       num    =   prompt("Enter Numerator value:", "Numerator");
+       denom  =   prompt("Enter Denominator value:", "Denominatorr");
+       //test input value  and actions by user
+  if (num == null || num == "" || denom == null || denom == "") {
+        output = "Client cancelled the prompt.";
+		}else{
+			//initialise the algorithm function and pass in the numerator and denominator values
+	  	algo(num, denom);
+	}
 }
+
+
+
 </script>
 </body>
 </html>
