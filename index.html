@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Binary Search Division</h2>
+
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="print"></p>
+
+
+<script>
+function myFunction() {
+  var  output, num, denum;
+   	   num    =   prompt("Enter Numerator value:", "Numerator");
+       denum  =   prompt("Enter Denumerator value:", "Denumerator");
+  if (num == null || num == "" || denum == null || denum == "") {
+    	output = "Client cancelled the prompt.";
+  }else{
+    output = "Your values are Numerator = "+num +" Denumerator = "+ denum +" ";
+  }
+  document.getElementById("print").innerHTML = output;
+}
+</script>
+</body>
+</html>
